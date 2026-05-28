@@ -1,0 +1,7 @@
+streamlit==1.41.1
+anthropic>=0.40.0
+python-dotenv>=1.0.0
+duckdb>=1.4.1
+pandas
+numpy==1.26.4
+agno>=2.2.10

@@ -1,0 +1,21 @@
+month,product,city,revenue,customers
+2025-01,SaaS Pro,Bengaluru,485000,142
+2025-01,SaaS Pro,Mumbai,392000,118
+2025-01,Analytics Suite,Chennai,267000,89
+2025-01,Cloud Starter,Hyderabad,198000,156
+2025-02,SaaS Pro,Bengaluru,521000,153
+2025-02,Analytics Suite,Mumbai,438000,127
+2025-02,Cloud Starter,Chennai,184000,142
+2025-02,Enterprise Plus,Hyderabad,612000,48
+2025-03,Enterprise Plus,Bengaluru,745000,62
+2025-03,SaaS Pro,Mumbai,467000,135
+2025-03,Cloud Starter,Chennai,215000,168
+2025-03,Analytics Suite,Hyderabad,328000,94
+2025-04,SaaS Pro,Bengaluru,567000,161
+2025-04,Enterprise Plus,Mumbai,689000,54
+2025-04,Analytics Suite,Chennai,294000,87
+2025-04,Cloud Starter,Hyderabad,232000,178
+2025-05,Analytics Suite,Bengaluru,412000,121
+2025-05,SaaS Pro,Mumbai,498000,144
+2025-05,Enterprise Plus,Chennai,573000,46
+2025-05,Cloud Starter,Hyderabad,256000,192
