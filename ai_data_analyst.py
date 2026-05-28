@@ -239,7 +239,14 @@ st.markdown(
     unsafe_allow_html=True,
 )
 
-st.markdown('<div class="section-heading">How it works</div>', unsafe_allow_html=True)
+st.markdown('<div class="section-heading">Upload your data</div>', unsafe_allow_html=True)
+uploaded_file = st.file_uploader(
+    "CSV or Excel file",
+    type=["csv", "xlsx"],
+    label_visibility="collapsed",
+)
+
+st.markdown('<div class="section-heading" style="margin-top:2.5rem;">How it works</div>', unsafe_allow_html=True)
 step_cols = st.columns(3)
 steps = [
     ("1", "Upload your data", "Drop in an Excel or CSV file — sales, inventory, patients, anything."),
@@ -278,14 +285,6 @@ for col, (icon, title, desc) in zip(use_cols, use_cases):
             """,
             unsafe_allow_html=True,
         )
-
-st.markdown('<div class="section-heading" style="margin-top:2.5rem;">Get started</div>', unsafe_allow_html=True)
-st.markdown('<div class="section-label">1. Upload your data</div>', unsafe_allow_html=True)
-uploaded_file = st.file_uploader(
-    "CSV or Excel file",
-    type=["csv", "xlsx"],
-    label_visibility="collapsed",
-)
 
 if uploaded_file is not None:
     temp_path, columns, df = preprocess_and_save(uploaded_file)
