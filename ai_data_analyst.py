@@ -108,86 +108,6 @@ st.markdown(
         }
         .section-label { font-weight: 600; color: #374151; margin-top: 0.5rem; margin-bottom: 0.5rem; }
 
-        /* Steps */
-        .step-card {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            border-radius: 14px;
-            padding: 1.4rem 1.3rem;
-            height: 100%;
-            transition: all 0.2s ease;
-        }
-        .step-card:hover {
-            border-color: #c7d2fe;
-            box-shadow: 0 6px 16px rgba(79, 70, 229, 0.08);
-            transform: translateY(-2px);
-        }
-        .step-number {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #4f46e5, #7c3aed);
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 1rem;
-            margin-bottom: 0.8rem;
-        }
-        .step-title {
-            font-size: 1.05rem;
-            font-weight: 700;
-            color: #111827;
-            margin-bottom: 0.3rem;
-        }
-        .step-desc {
-            color: #6b7280;
-            font-size: 0.95rem;
-            line-height: 1.45;
-        }
-
-        /* Use cases */
-        .use-card {
-            background: #ffffff;
-            border: 1px solid #e5e7eb;
-            border-radius: 14px;
-            padding: 1.5rem 1.3rem;
-            text-align: center;
-            height: 100%;
-            transition: all 0.2s ease;
-        }
-        .use-card:hover {
-            border-color: #c7d2fe;
-            box-shadow: 0 6px 16px rgba(79, 70, 229, 0.08);
-            transform: translateY(-2px);
-        }
-        .use-icon {
-            font-size: 2.6rem;
-            margin-bottom: 0.6rem;
-            display: block;
-        }
-        .use-title {
-            font-weight: 700;
-            color: #111827;
-            font-size: 1.05rem;
-            margin-bottom: 0.3rem;
-        }
-        .use-desc {
-            color: #6b7280;
-            font-size: 0.92rem;
-            line-height: 1.45;
-        }
-
-        /* Upload section */
-        .upload-section {
-            background: #f9fafb;
-            border-radius: 14px;
-            padding: 1.8rem;
-            margin-top: 1.5rem;
-            border: 1px solid #e5e7eb;
-        }
-
         /* Buttons */
         div.stButton > button {
             width: 100%;
@@ -245,46 +165,6 @@ uploaded_file = st.file_uploader(
     type=["csv", "xlsx"],
     label_visibility="collapsed",
 )
-
-st.markdown('<div class="section-heading" style="margin-top:2.5rem;">How it works</div>', unsafe_allow_html=True)
-step_cols = st.columns(3)
-steps = [
-    ("1", "Upload your data", "Drop in an Excel or CSV file — sales, inventory, patients, anything."),
-    ("2", "Ask any question", "Type a question in plain English. No formulas, no SQL required."),
-    ("3", "Get instant insights", "Receive clear answers with the numbers and business interpretation."),
-]
-for col, (num, title, desc) in zip(step_cols, steps):
-    with col:
-        st.markdown(
-            f"""
-            <div class="step-card">
-                <div class="step-number">{num}</div>
-                <div class="step-title">{title}</div>
-                <div class="step-desc">{desc}</div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
-
-st.markdown('<div class="section-heading" style="margin-top:2.5rem;">Built for businesses like yours</div>', unsafe_allow_html=True)
-use_cols = st.columns(3)
-use_cases = [
-    ("🛍️", "Retail shops", "Track best-selling products, peak hours, and revenue trends from your sales sheet."),
-    ("🏥", "Clinics", "Analyse patient visits, treatment patterns, and monthly billing — securely on your data."),
-    ("📈", "Any Excel business", "If you keep records in a spreadsheet, you can analyse them here."),
-]
-for col, (icon, title, desc) in zip(use_cols, use_cases):
-    with col:
-        st.markdown(
-            f"""
-            <div class="use-card">
-                <span class="use-icon">{icon}</span>
-                <div class="use-title">{title}</div>
-                <div class="use-desc">{desc}</div>
-            </div>
-            """,
-            unsafe_allow_html=True,
-        )
 
 if uploaded_file is not None:
     temp_path, columns, df = preprocess_and_save(uploaded_file)
